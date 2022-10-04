@@ -15,4 +15,4 @@
 .DS_Store
 .prettierignore
 .style-guide
-.node_module
+node_module
