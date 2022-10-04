@@ -19,28 +19,28 @@
     <section class="countdown">
       <div class="countdown__container">
         <h1 class="countdown__heading">we're launching soon</h1>
-        <div class="timer">
+        <div class="timer" id="timer">
           <!-- Days Card -->
           <div class="timer__card">
-            <div class="timer__card--part">00</div>
+            <div class="timer__card--part" id="timerDays"></div>
             <span class="timer__card--name">days</span>
           </div>
 
           <!-- Hours card -->
           <div class="timer__card">
-            <div class="timer__card--part">00</div>
+            <div class="timer__card--part" id="timerHours"></div>
             <span class="timer__card--name">hours</span>
           </div>
 
           <!-- Minutes card -->
           <div class="timer__card">
-            <div class="timer__card--part">00</div>
+            <div class="timer__card--part" id="timerMinutes"></div>
             <span class="timer__card--name">minutes</span>
           </div>
 
           <!-- Seconds card -->
           <div class="timer__card">
-            <div class="timer__card--part">00</div>
+            <div class="timer__card--part" id="timerSeconds"></div>
             <span class="timer__card--name">seconds</span>
           </div>
         </div>
@@ -66,5 +66,7 @@
         </footer>
       </div>
     </section>
+
+    <script src="./js/index.js" type="module"></script>
   </body>
 </html>

@@ -98,7 +98,7 @@ body {
 }
 @media (min-width: 780px) {
   .countdown__socials {
-    margin-top: 32vh;
+    margin-top: 25vh;
   }
 }
 .countdown__socials--link {
