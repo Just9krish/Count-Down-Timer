@@ -1,0 +1,15 @@
+// Media quries break points
+
+$breakpoint: (
+  "sm": 480px,
+  "md": 780px,
+  "lg": 1020px,
+);
+
+// Mixins to manage media quries beak point
+
+@mixin breakpoint($size) {
+  @media (min-width: map-get($breakpoint, $size)) {
+    @content;
+  }
+}

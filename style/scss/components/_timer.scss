@@ -1,0 +1,25 @@
+@use "../utilities" as *;
+
+.timer {
+  display: flex;
+  gap: rem(10);
+  height: rem(200);
+  margin-top: rem(105);
+
+  @include breakpoint("md") {
+    gap: rem(30);
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    width: 19vw;
+    height: 9vw;
+    perspective: rem(100);
+
+    @include breakpoint("md") {
+        width: rem(150);
+        height: rem(70);
+    }
+  }
+}

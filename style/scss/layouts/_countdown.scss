@@ -1,0 +1,75 @@
+@use "../utilities" as *;
+
+.countdown {
+  $root: &;
+  background: url(../../../images/pattern-hills.svg),
+    url(../../../images/bg-stars.svg);
+  min-height: 100vh;
+  background-repeat: no-repeat;
+  background-position: 82% 100%, center center;
+
+  @include breakpoint("md") {
+    background-position: bottom center, center center;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    padding: rem(130) rem(0) rem(20) rem(0);
+  }
+
+  &__heading {
+    // color: $white
+    font-size: rem(24);
+    letter-spacing: rem(7);
+    text-transform: uppercase;
+    text-align: center;
+    padding-inline: rem(20);
+
+    @include breakpoint("md") {
+      padding: 0;
+    }
+  }
+
+  &__socials {
+    display: flex;
+    gap: rem(30);
+    margin-top: 20vh;
+
+    @include breakpoint("md") {
+      margin-top: 42vh;
+    }
+  }
+
+  &__socials--link {
+    text-decoration: none;
+    display: inherit;
+    font-size: rem(29);
+    transition: transform 350ms ease-in;
+    fill: #8385a9;
+
+    @include breakpoint("md") {
+      &:hover {
+        transform: rotate(360deg);
+        fill: $soft-red;
+      }
+    }
+
+    // & svg path {
+    //     &:hover {
+
+    //     }
+    // }
+
+    &:focus {
+      outline: 2px dashed $soft-red;
+      outline-offset: rem(4);
+    }
+
+    &:focus:not(:focus-visible) {
+      outline: none;
+    }
+  }
+}
