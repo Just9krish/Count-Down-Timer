@@ -50,6 +50,82 @@ body {
   font-family: "Red Hat Text", sans-serif;
 }
 
+.countdown {
+  background: url(../../../images/pattern-hills.svg), url(../../../images/bg-stars.svg), -webkit-gradient(linear, left top, left bottom, color-stop(17%, #191a24), color-stop(51%, #1e1f29), color-stop(83%, #2b212d));
+  background: url(../../../images/pattern-hills.svg), url(../../../images/bg-stars.svg), linear-gradient(180deg, #191a24 17%, #1e1f29 51%, #2b212d 83%);
+  min-height: 100vh;
+  background-repeat: no-repeat;
+  background-position: 82% 100%, center center;
+}
+@media (min-width: 780px) {
+  .countdown {
+    background-position: bottom center, center center;
+  }
+}
+.countdown__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100vh;
+  padding: 8.125rem 0rem 1.25rem 0rem;
+}
+.countdown__heading {
+  color: hsl(0deg, 0%, 100%);
+  font-size: 1.5rem;
+  letter-spacing: 0.4375rem;
+  text-transform: uppercase;
+  text-align: center;
+  padding-inline: 1.25rem;
+}
+@media (min-width: 780px) {
+  .countdown__heading {
+    padding: 0;
+  }
+}
+.countdown__socials {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 1.875rem;
+  margin-top: 20vh;
+}
+@media (min-width: 780px) {
+  .countdown__socials {
+    margin-top: 32vh;
+  }
+}
+.countdown__socials--link {
+  text-decoration: none;
+  display: inherit;
+  font-size: 1.8125rem;
+  -webkit-transition: -webkit-transform 350ms ease-in;
+  transition: -webkit-transform 350ms ease-in;
+  transition: transform 350ms ease-in;
+  transition: transform 350ms ease-in, -webkit-transform 350ms ease-in;
+  fill: #8385a9;
+}
+@media (min-width: 780px) {
+  .countdown__socials--link:hover {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+    fill: hsl(345deg, 95%, 68%);
+  }
+}
+.countdown__socials--link:focus {
+  outline: 2px dashed hsl(345deg, 95%, 68%);
+  outline-offset: 0.25rem;
+}
+.countdown__socials--link:focus:not(:focus-visible) {
+  outline: none;
+}
+
 .timer {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -162,80 +238,4 @@ body {
     font-size: 1rem;
     letter-spacing: 0.4375rem;
   }
-}
-
-.countdown {
-  background: url(../../../images/pattern-hills.svg), url(../../../images/bg-stars.svg), -webkit-gradient(linear, left top, left bottom, color-stop(17%, #191a24), color-stop(51%, #1e1f29), color-stop(83%, #2b212d));
-  background: url(../../../images/pattern-hills.svg), url(../../../images/bg-stars.svg), linear-gradient(180deg, #191a24 17%, #1e1f29 51%, #2b212d 83%);
-  min-height: 100vh;
-  background-repeat: no-repeat;
-  background-position: 82% 100%, center center;
-}
-@media (min-width: 780px) {
-  .countdown {
-    background-position: bottom center, center center;
-  }
-}
-.countdown__container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  height: 100vh;
-  padding: 8.125rem 0rem 1.25rem 0rem;
-}
-.countdown__heading {
-  color: hsl(0deg, 0%, 100%);
-  font-size: 1.5rem;
-  letter-spacing: 0.4375rem;
-  text-transform: uppercase;
-  text-align: center;
-  padding-inline: 1.25rem;
-}
-@media (min-width: 780px) {
-  .countdown__heading {
-    padding: 0;
-  }
-}
-.countdown__socials {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  gap: 1.875rem;
-  margin-top: 20vh;
-}
-@media (min-width: 780px) {
-  .countdown__socials {
-    margin-top: 32vh;
-  }
-}
-.countdown__socials--link {
-  text-decoration: none;
-  display: inherit;
-  font-size: 1.8125rem;
-  -webkit-transition: -webkit-transform 350ms ease-in;
-  transition: -webkit-transform 350ms ease-in;
-  transition: transform 350ms ease-in;
-  transition: transform 350ms ease-in, -webkit-transform 350ms ease-in;
-  fill: #8385a9;
-}
-@media (min-width: 780px) {
-  .countdown__socials--link:hover {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
-    fill: hsl(345deg, 95%, 68%);
-  }
-}
-.countdown__socials--link:focus {
-  outline: 2px dashed hsl(345deg, 95%, 68%);
-  outline-offset: 0.25rem;
-}
-.countdown__socials--link:focus:not(:focus-visible) {
-  outline: none;
 }
