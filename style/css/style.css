@@ -75,6 +75,7 @@ body {
   height: 9vw;
   -webkit-perspective: 6.25rem;
           perspective: 6.25rem;
+  position: relative;
 }
 @media (min-width: 780px) {
   .timer__card {
@@ -82,9 +83,90 @@ body {
     height: 4.375rem;
   }
 }
+.timer__card--bg {
+  position: absolute;
+  height: 200%;
+  top: 0.3125rem;
+  left: 1.1vw;
+  width: 17vw;
+  background: hsl(234deg, 17%, 12%);
+  border-radius: 0.625rem;
+}
+@media (min-width: 780px) {
+  .timer__card--bg {
+    top: 0.625rem;
+    left: 0.0625rem;
+    width: calc(100% - 2px);
+  }
+}
+.timer__card--part {
+  font-size: clamp(2rem, 7vw, 6rem);
+  font-weight: 700;
+  color: hsl(345deg, 95%, 68%);
+  position: relative;
+  z-index: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-block: 1rem;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+          box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+@media (min-width: 780px) {
+  .timer__card--part {
+    font-size: 5.5rem;
+  }
+}
+.timer__card--part:before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 50%;
+  background-color: #2C2C44;
+  border-radius: 0.625rem;
+  z-index: -1;
+}
+.timer__card--part:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #34364F;
+  border-radius: 0.625rem;
+  z-index: -1;
+}
+.timer__card--name {
+  color: hsl(237deg, 18%, 59%);
+  font-size: clamp(0.6rem, 2.3vw, 1rem);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.125rem;
+  width: 100%;
+  text-align: center;
+  padding-top: 1.375rem;
+}
+@media (min-width: 780px) {
+  .timer__card--name {
+    font-size: 1rem;
+    letter-spacing: 0.4375rem;
+  }
+}
 
 .countdown {
-  background: url(../../../images/pattern-hills.svg), url(../../../images/bg-stars.svg);
+  background: url(../../../images/pattern-hills.svg), url(../../../images/bg-stars.svg), -webkit-gradient(linear, left top, left bottom, color-stop(17%, #191a24), color-stop(51%, #1e1f29), color-stop(83%, #2b212d));
+  background: url(../../../images/pattern-hills.svg), url(../../../images/bg-stars.svg), linear-gradient(180deg, #191a24 17%, #1e1f29 51%, #2b212d 83%);
   min-height: 100vh;
   background-repeat: no-repeat;
   background-position: 82% 100%, center center;
@@ -109,6 +191,7 @@ body {
   padding: 8.125rem 0rem 1.25rem 0rem;
 }
 .countdown__heading {
+  color: hsl(0deg, 0%, 100%);
   font-size: 1.5rem;
   letter-spacing: 0.4375rem;
   text-transform: uppercase;
@@ -129,7 +212,7 @@ body {
 }
 @media (min-width: 780px) {
   .countdown__socials {
-    margin-top: 42vh;
+    margin-top: 32vh;
   }
 }
 .countdown__socials--link {

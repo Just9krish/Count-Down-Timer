@@ -16,10 +16,86 @@
     width: 19vw;
     height: 9vw;
     perspective: rem(100);
+    position: relative;
 
     @include breakpoint("md") {
-        width: rem(150);
-        height: rem(70);
+      width: rem(150);
+      height: rem(70);
+    }
+  }
+
+  &__card--bg {
+    position: absolute;
+    height: 200%;
+    top: rem(5);
+    left: 1.1vw;
+    width: 17vw;
+    background: $very-dark-blue-blackish;
+    border-radius: rem(10);
+
+    @include breakpoint("md") {
+      top: rem(10);
+      left: rem(1);
+      width: calc(100% - 2px);
+    }
+  }
+
+  &__card--part {
+    font-size: clamp(2rem, 7vw, 6rem);
+    font-weight: 700;
+    color: $soft-red;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-block: rem(16);
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+
+    @include breakpoint("md") {
+      font-size: rem(88);
+    }
+
+    &:before {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 50%;
+      background-color: #2C2C44;
+      border-radius: rem(10);
+      z-index: -1;
+    }
+
+    &:after {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #34364F;
+      border-radius: rem(10);
+      z-index: -1;
+    }
+  }
+
+  &__card--name {
+    color: $grayish-blue;
+    font-size: clamp(0.6rem, 2.3vw, 1rem);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: rem(2);
+    width: 100%;
+    text-align: center;
+    padding-top: rem(22);
+
+    @include breakpoint("md") {
+      font-size: rem(16);
+      letter-spacing: rem(7);
     }
   }
 }

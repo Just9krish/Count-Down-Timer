@@ -1,9 +1,9 @@
 @use "../utilities" as *;
 
 .countdown {
-  $root: &;
   background: url(../../../images/pattern-hills.svg),
-    url(../../../images/bg-stars.svg);
+    url(../../../images/bg-stars.svg),
+    linear-gradient(180deg, #191a24 17%, #1e1f29 51%, #2b212d 83%);
   min-height: 100vh;
   background-repeat: no-repeat;
   background-position: 82% 100%, center center;
@@ -21,7 +21,7 @@
   }
 
   &__heading {
-    // color: $white
+    color: $white;
     font-size: rem(24);
     letter-spacing: rem(7);
     text-transform: uppercase;
@@ -39,7 +39,7 @@
     margin-top: 20vh;
 
     @include breakpoint("md") {
-      margin-top: 42vh;
+      margin-top: 32vh;
     }
   }
 
@@ -56,12 +56,6 @@
         fill: $soft-red;
       }
     }
-
-    // & svg path {
-    //     &:hover {
-
-    //     }
-    // }
 
     &:focus {
       outline: 2px dashed $soft-red;
