@@ -1,0 +1,40 @@
+@-webkit-keyframes flip {
+  from {
+    -webkit-transform: rotateX(0deg);
+            transform: rotateX(0deg);
+  }
+  to {
+    -webkit-transform: rotateX(-90deg);
+            transform: rotateX(-90deg);
+  }
+}
+@keyframes flip {
+  from {
+    -webkit-transform: rotateX(0deg);
+            transform: rotateX(0deg);
+  }
+  to {
+    -webkit-transform: rotateX(-90deg);
+            transform: rotateX(-90deg);
+  }
+}
+@-webkit-keyframes flip-inverse {
+  from {
+    -webkit-transform: rotateX(90deg);
+            transform: rotateX(90deg);
+  }
+  to {
+    -webkit-transform: rotateX(0deg);
+            transform: rotateX(0deg);
+  }
+}
+@keyframes flip-inverse {
+  from {
+    -webkit-transform: rotateX(90deg);
+            transform: rotateX(90deg);
+  }
+  to {
+    -webkit-transform: rotateX(0deg);
+            transform: rotateX(0deg);
+  }
+}

@@ -14,30 +14,20 @@
     display: flex;
     flex-direction: column;
     width: 19vw;
-    height: 9vw;
     perspective: rem(100);
     position: relative;
 
     @include breakpoint("md") {
       width: rem(150);
-      height: rem(70);
     }
-  }
 
-  &__card--bg {
-    position: absolute;
-    height: 200%;
-    top: rem(5);
-    left: 1.1vw;
-    width: 17vw;
-    background: $very-dark-blue-blackish;
-    border-radius: rem(10);
-
-    @include breakpoint("md") {
-      top: rem(10);
-      left: rem(1);
-      width: calc(100% - 2px);
-    }
+    //   &.running {
+    //     #{$root}__card--part {
+    //       &::before {
+    //         animation: flip 0.6s ease-in-out;
+    //       }
+    //     }
+    //   }
   }
 
   &__card--part {
@@ -50,7 +40,8 @@
     justify-content: center;
     align-items: center;
     padding-block: rem(16);
-    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+      rgba(0, 0, 0, 0.22) 0px 15px 12px;
 
     @include breakpoint("md") {
       font-size: rem(88);
@@ -64,9 +55,10 @@
       left: 0;
       right: 0;
       bottom: 50%;
-      background-color: #2C2C44;
+      background-color: #2c2c44;
       border-radius: rem(10);
       z-index: -1;
+      animation: flip-inverse 0.3s ease-in;
     }
 
     &:after {
@@ -77,9 +69,11 @@
       left: 0;
       right: 0;
       bottom: 0;
-      background-color: #34364F;
+      background-color: #34364f;
       border-radius: rem(10);
       z-index: -1;
+      animation: flip 0.3s ease-out;
+      animation-delay: 0.3s;
     }
   }
 

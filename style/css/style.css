@@ -41,6 +41,54 @@ ol[role=list] {
     scroll-behavior: auto !important;
   }
 }
+@-webkit-keyframes flip {
+  from {
+    -webkit-transform: rotateX(0deg);
+            transform: rotateX(0deg);
+    background-color: #2a2c41;
+  }
+  to {
+    -webkit-transform: rotateX(-90deg);
+            transform: rotateX(-90deg);
+    background-color: #202131;
+  }
+}
+@keyframes flip {
+  from {
+    -webkit-transform: rotateX(0deg);
+            transform: rotateX(0deg);
+    background-color: #2a2c41;
+  }
+  to {
+    -webkit-transform: rotateX(-90deg);
+            transform: rotateX(-90deg);
+    background-color: #202131;
+  }
+}
+@-webkit-keyframes flip-inverse {
+  from {
+    -webkit-transform: rotateX(90deg);
+            transform: rotateX(90deg);
+    background-color: #161722;
+  }
+  to {
+    -webkit-transform: rotateX(0deg);
+            transform: rotateX(0deg);
+    background-color: hsl(236deg, 21%, 26%);
+  }
+}
+@keyframes flip-inverse {
+  from {
+    -webkit-transform: rotateX(90deg);
+            transform: rotateX(90deg);
+    background-color: #161722;
+  }
+  to {
+    -webkit-transform: rotateX(0deg);
+            transform: rotateX(0deg);
+    background-color: hsl(236deg, 21%, 26%);
+  }
+}
 html {
   font-size: 14px;
 }
@@ -148,7 +196,6 @@ body {
       -ms-flex-direction: column;
           flex-direction: column;
   width: 19vw;
-  height: 9vw;
   -webkit-perspective: 6.25rem;
           perspective: 6.25rem;
   position: relative;
@@ -156,23 +203,6 @@ body {
 @media (min-width: 780px) {
   .timer__card {
     width: 9.375rem;
-    height: 4.375rem;
-  }
-}
-.timer__card--bg {
-  position: absolute;
-  height: 200%;
-  top: 0.3125rem;
-  left: 1.1vw;
-  width: 17vw;
-  background: hsl(234deg, 17%, 12%);
-  border-radius: 0.625rem;
-}
-@media (min-width: 780px) {
-  .timer__card--bg {
-    top: 0.625rem;
-    left: 0.0625rem;
-    width: calc(100% - 2px);
   }
 }
 .timer__card--part {
@@ -207,9 +237,11 @@ body {
   left: 0;
   right: 0;
   bottom: 50%;
-  background-color: #2C2C44;
+  background-color: #2c2c44;
   border-radius: 0.625rem;
   z-index: -1;
+  -webkit-animation: flip-inverse 0.3s ease-in;
+          animation: flip-inverse 0.3s ease-in;
 }
 .timer__card--part:after {
   content: "";
@@ -219,9 +251,13 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #34364F;
+  background-color: #34364f;
   border-radius: 0.625rem;
   z-index: -1;
+  -webkit-animation: flip 0.3s ease-out;
+          animation: flip 0.3s ease-out;
+  -webkit-animation-delay: 0.3s;
+          animation-delay: 0.3s;
 }
 .timer__card--name {
   color: hsl(237deg, 18%, 59%);

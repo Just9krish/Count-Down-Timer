@@ -20,15 +20,28 @@ function getTimeRemaining(endTime) {
 }
 
 
-function initializeTimer(id, endTime) {
-    const timer = document.getElementById(id)
+function initializeTimer(endTime) {
     const days = document.getElementById("timerDays")
     const hours = document.getElementById("timerHours")
     const minutes = document.getElementById("timerMinutes")
     const seconds = document.getElementById("timerSeconds")
 
+
     function updateTimer() {
         const t = getTimeRemaining(endTime)
+
+        function a() {
+            let tempsec = t.seconds
+            // console.log(tempsec)
+            // console.log(t.seconds)
+            setTimeout(() => {
+                if (t.seconds != tempsec) {
+                    let secStyle = seconds.style
+                    console.log(secStyle)
+                    
+                }
+            }, 100)
+        }
 
         days.innerHTML = (`0${t.days}`).slice(-2)
         hours.innerHTML = (`0${t.hours}`).slice(-2)
@@ -38,6 +51,7 @@ function initializeTimer(id, endTime) {
         if (t.total <= 0) {
             clearInterval(timeinterval)
         }
+        a()
     }
 
     updateTimer()
@@ -50,5 +64,5 @@ function initializeTimer(id, endTime) {
 // 2 = output the remaining time to our p tag
 // 3 = if remaining time gets zero stop the clock
 
-initializeTimer('p', deadLine)
+initializeTimer(deadLine)
 

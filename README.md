@@ -1,6 +1,6 @@
 ## Welcome! 👋
 
-# Space tourism website
+# Launch Countdown Timer
 
 ![Design preview for the Space tourism website coding challenge](./design/active-states.jpg)
 
