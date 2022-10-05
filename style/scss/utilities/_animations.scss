@@ -1,23 +1,35 @@
 @use "./variables" as *;
 
+// @keyframes flip {
+//   from {
+//     transform: rotateX(0deg);
+//     background-color: darken($dark-desaturate-blue, 5%);
+//   }
+//   to {
+//     transform: rotateX(-90deg);
+//     background-color: darken($dark-desaturate-blue, 10%);
+//   }
+// }
+
+// @keyframes flip-inverse {
+//   from {
+//     transform: rotateX(90deg);
+//     background-color: darken($dark-desaturate-blue, 15%);
+//   }
+//   to {
+//     transform: rotateX(0deg);
+//     background-color: $dark-desaturate-blue;
+//   }
+// }
+
 @keyframes flip {
-  from {
-    transform: rotateX(0deg);
-    background-color: darken($dark-desaturate-blue, 5%);
-  }
   to {
-    transform: rotateX(-90deg);
-    background-color: darken($dark-desaturate-blue, 10%);
+    transform: rotateX(180deg);
   }
 }
 
-@keyframes flip-inverse {
-  from {
-    transform: rotateX(90deg);
-    background-color: darken($dark-desaturate-blue, 15%);
-  }
+@keyframes backFlip {
   to {
-    transform: rotateX(0deg);
-    background-color: $dark-desaturate-blue;
+    transform: rotateX(-180deg);
   }
 }

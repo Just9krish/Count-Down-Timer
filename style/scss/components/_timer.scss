@@ -20,14 +20,6 @@
     @include breakpoint("md") {
       width: rem(150);
     }
-
-    //   &.running {
-    //     #{$root}__card--part {
-    //       &::before {
-    //         animation: flip 0.6s ease-in-out;
-    //       }
-    //     }
-    //   }
   }
 
   &__card--part {
@@ -58,7 +50,6 @@
       background-color: #2c2c44;
       border-radius: rem(10);
       z-index: -1;
-      animation: flip-inverse 0.3s ease-in;
     }
 
     &:after {
@@ -72,8 +63,6 @@
       background-color: #34364f;
       border-radius: rem(10);
       z-index: -1;
-      animation: flip 0.3s ease-out;
-      animation-delay: 0.3s;
     }
   }
 
@@ -92,4 +81,12 @@
       letter-spacing: rem(7);
     }
   }
+}
+
+.flip-animation::before {
+  animation: flip 0.3s ease-in;
+}
+
+.flip-animation::after {
+  animation: bakFlip 0.3s ease-in;
 }

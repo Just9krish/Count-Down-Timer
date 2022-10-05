@@ -42,51 +42,27 @@ ol[role=list] {
   }
 }
 @-webkit-keyframes flip {
-  from {
-    -webkit-transform: rotateX(0deg);
-            transform: rotateX(0deg);
-    background-color: #2a2c41;
-  }
   to {
-    -webkit-transform: rotateX(-90deg);
-            transform: rotateX(-90deg);
-    background-color: #202131;
+    -webkit-transform: rotateX(180deg);
+            transform: rotateX(180deg);
   }
 }
 @keyframes flip {
-  from {
-    -webkit-transform: rotateX(0deg);
-            transform: rotateX(0deg);
-    background-color: #2a2c41;
-  }
   to {
-    -webkit-transform: rotateX(-90deg);
-            transform: rotateX(-90deg);
-    background-color: #202131;
+    -webkit-transform: rotateX(180deg);
+            transform: rotateX(180deg);
   }
 }
-@-webkit-keyframes flip-inverse {
-  from {
-    -webkit-transform: rotateX(90deg);
-            transform: rotateX(90deg);
-    background-color: #161722;
-  }
+@-webkit-keyframes backFlip {
   to {
-    -webkit-transform: rotateX(0deg);
-            transform: rotateX(0deg);
-    background-color: hsl(236deg, 21%, 26%);
+    -webkit-transform: rotateX(-180deg);
+            transform: rotateX(-180deg);
   }
 }
-@keyframes flip-inverse {
-  from {
-    -webkit-transform: rotateX(90deg);
-            transform: rotateX(90deg);
-    background-color: #161722;
-  }
+@keyframes backFlip {
   to {
-    -webkit-transform: rotateX(0deg);
-            transform: rotateX(0deg);
-    background-color: hsl(236deg, 21%, 26%);
+    -webkit-transform: rotateX(-180deg);
+            transform: rotateX(-180deg);
   }
 }
 html {
@@ -240,8 +216,6 @@ body {
   background-color: #2c2c44;
   border-radius: 0.625rem;
   z-index: -1;
-  -webkit-animation: flip-inverse 0.3s ease-in;
-          animation: flip-inverse 0.3s ease-in;
 }
 .timer__card--part:after {
   content: "";
@@ -254,10 +228,6 @@ body {
   background-color: #34364f;
   border-radius: 0.625rem;
   z-index: -1;
-  -webkit-animation: flip 0.3s ease-out;
-          animation: flip 0.3s ease-out;
-  -webkit-animation-delay: 0.3s;
-          animation-delay: 0.3s;
 }
 .timer__card--name {
   color: hsl(237deg, 18%, 59%);
@@ -274,4 +244,14 @@ body {
     font-size: 1rem;
     letter-spacing: 0.4375rem;
   }
+}
+
+.flip-animation::before {
+  -webkit-animation: flip 0.3s ease-in;
+          animation: flip 0.3s ease-in;
+}
+
+.flip-animation::after {
+  -webkit-animation: bakFlip 0.3s ease-in;
+          animation: bakFlip 0.3s ease-in;
 }
